@@ -1,4 +1,4 @@
-import Head from "next/head";
+import PageWrapper from "@/components/PageWrapper";
 import QuestonInput from "@/components/QuestionComponents/QuestionInput";
 import QuestionRadio from "@/components/QuestionComponents/QuestionRadio";
 import styles from '@/styles/Question.module.scss'
@@ -8,14 +8,8 @@ type PropsType = {
 }
 
 export default function Question(props: PropsType) {
-    return <>
-        <Head>
-            <title>Next.js demo</title>
-            <meta name="description" content="question"/>
-            <meta name="viewport" content="width=deivce-width, initial-scale=1" />
-            {/* <link rel="icon" ref="/favicon.ico" /> */}
-        </Head>
-        <main>
+    return <PageWrapper title="question">
+
             
             <form method="POST" action="/api/answer">
                 <input type="hidden" name="questionId" value={props.id}/>
@@ -39,8 +33,7 @@ export default function Question(props: PropsType) {
                     <button type="submit">Submit</button>
                 </div>
             </form>
-        </main>
-    </>
+    </PageWrapper>
 }
 
 export async function getServerSideProps(context: any) {

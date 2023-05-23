@@ -1,15 +1,8 @@
-import Head from "next/head";
+import PageWrapper from "@/components/PageWrapper"
 
 export default function Fail() {
-    return <>
-        <Head>
-            <title>Next.js demo</title>
-            {/* <meta name="description" content="question"/> */}
-            <meta name="viewport" content="width=deivce-width, initial-scale=1" />
-            {/* <link rel="icon" ref="/favicon.ico" /> */}
-        </Head>
-        <main>
-            <h1>Fail Page</h1>
-        </main>
-    </>
+    return <PageWrapper title="Submission failed">
+        <h1>Failed Page</h1>
+        <p>Questionnaire Submission failed</p>
+    </PageWrapper>
 }
